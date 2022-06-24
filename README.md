@@ -84,7 +84,7 @@ ___
 - Miembro 2 se va a dev (<code>git checkout dev</code>), trae los cambios que ha hecho el otro compañero en remoto (<code>git pull origin dev</code>) y entonces procede a mergear su rama: <code>git merge navbar</code>
 - Como se han tocado las mismas líneas de código, debería haber conflicto. Solucionadlo y después comitear los cambios y subirlo a la rama dev.
 
-### Iteration 3: kanban practise
+### Iteration 3: automation is cool
 
 - Generar un nuevo proyecto en el apartado de Github *Projects > Classic*
 - Crear algunas tareas y convertiras a issues
