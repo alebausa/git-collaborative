@@ -2,7 +2,28 @@
 
 > This repo is for students to practise committing, creating branches and merging them, and working in pairs with Git to get ready for the project
 
-## 📝 Git cheatsheet
+## 🎬 Practise time!
+### Iteration 1: me, myself and I
+
+- Miembro 1 del equipo debe forkear y clonar el repositorio. En Github, debe dar permisos al otro miembro para editar el repositorio (*Repo > Settings > Collaborators and teams*)
+- El otro miembro (Miembro 2), clona el repo **desde la cuenta de Github del compañero (no hacer dos forks)**.
+- Miembro 1 crea una rama *dev*: <code>git checkout -b dev</code>
+- Miembro 1 hace una función cualquiera en el archivo index.js, los comitea en la rama dev y después sube los cambios la rama *dev* en remoto (Github): <code>git push origin dev</code>
+
+### Iteration 2: conflict is a part of life
+
+- Miembro 2, para traerse lo que hay en remoto, hace <code>git pull</code>
+- Miembro 2 se va a la rama *dev*: <code>git checkout dev</code>
+- DESDE DEV, crea una nueva rama: <code>git checkout -b navbar</code>
+- Crea una navbar en el archivo index.html
+- De mientras, Miembro 1 del equipo **se queda en dev** y genera a la vez una navbar en el archivo index.html. Cuando la acaba, comitea los cambios y los sube a la rama dev en remoto
+- Miembro 2, cuando acaba de hacer su navbar en la rama *navbar*, comitea los cambios en su rama
+- Miembro 2 se va a dev (<code>git checkout dev</code>), trae los cambios que ha hecho el otro compañero en remoto (<code>git pull origin dev</code>) y entonces procede a mergear su rama: <code>git merge navbar</code>
+- Como se han tocado las mismas líneas de código, debería haber conflicto. Solucionadlo y después comitear los cambios y subirlo a la rama dev.
+
+---
+
+## 📝 Git commands cheatsheet
 
 | Command                                   | Description                       | 
 |-------------------------------------------|-----------------------------------|
@@ -64,22 +85,3 @@ git merge branch-name # me traigo los cambios que he hecho yo a la rama dev y s
 git commit -m "merges branch-name into dev" # guardo los cambios
 git push origin dev # subo los cambios a github para que se los pueda descargar mi compañer@
 ```
-___
-## 🎬 Practise time!
-### Iteration 1: me, myself and I
-
-- Miembro 1 del equipo debe forkear y clonar el repositorio. En Github, debe dar permisos al otro miembro para editar el repositorio (*Repo > Settings > Collaborators and teams*)
-- El otro miembro (Miembro 2), clona el repo **desde la cuenta de Github del compañero (no hacer dos forks)**.
-- Miembro 1 crea una rama *dev*: <code>git checkout -b dev</code>
-- Miembro 1 hace una función cualquiera en el archivo index.js, los comitea en la rama dev y después sube los cambios la rama *dev* en remoto (Github): <code>git push origin dev</code>
-
-### Iteration 2: conflict is a part of life
-
-- Miembro 2, para traerse lo que hay en remoto, hace <code>git pull</code>
-- Miembro 2 se va a la rama *dev*: <code>git checkout dev</code>
-- DESDE DEV, crea una nueva rama: <code>git checkout -b navbar</code>
-- Crea una navbar en el archivo index.html
-- De mientras, Miembro 1 del equipo **se queda en dev** y genera a la vez una navbar en el archivo index.html. Cuando la acaba, comitea los cambios y los sube a la rama dev en remoto
-- Miembro 2, cuando acaba de hacer su navbar en la rama *navbar*, comitea los cambios en su rama
-- Miembro 2 se va a dev (<code>git checkout dev</code>), trae los cambios que ha hecho el otro compañero en remoto (<code>git pull origin dev</code>) y entonces procede a mergear su rama: <code>git merge navbar</code>
-- Como se han tocado las mismas líneas de código, debería haber conflicto. Solucionadlo y después comitear los cambios y subirlo a la rama dev.
